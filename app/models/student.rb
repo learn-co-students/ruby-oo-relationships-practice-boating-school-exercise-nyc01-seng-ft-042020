@@ -31,11 +31,11 @@ class Student
     def grade_percentage
         total_tests = BoatingTest.all.select do |test|
             test.student == self
+            end
+        passed_tests = total_tests.select do |test|
+            test.test_status == "passed"
             end.count
-        passed_tests = BoatingTest.all.select do |test|
-            test.student == self && test.test_status == "passed"
-            end.count
-        (passed_tests.to_f/total_tests.to_f)*100.0
+        (passed_tests.to_f/total_tests.count.to_f)*100.0
     end
     
 
