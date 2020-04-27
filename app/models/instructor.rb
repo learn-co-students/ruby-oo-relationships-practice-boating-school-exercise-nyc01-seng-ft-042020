@@ -29,7 +29,7 @@ attr_reader :name
 
             def fail_student(student, test_name)
                 #use same method as above. potentially this could build off of 
-                #previous method. 
+                #previous method. x
                 BoatingTest.all.collect do |e|
                     if e.student == student && test_name == e.test_name
                     status = "failed"
