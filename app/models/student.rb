@@ -33,7 +33,7 @@ class Student
             test.student == self
             end
         passed_tests = total_tests.select do |test|
-            test.test_status == "passed"
+            test.status == "passed"
             end.count
         (passed_tests.to_f/total_tests.count.to_f)*100.0
     end
