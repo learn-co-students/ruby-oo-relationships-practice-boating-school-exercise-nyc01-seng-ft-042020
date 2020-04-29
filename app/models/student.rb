@@ -3,8 +3,8 @@ class Student
   attr_reader :first_name
 
   def initialize(first_name)
-   @first_name = name
-   Student.all << all
+   @first_name = first_name
+   Student.all << self
  end
 
  def self.all
@@ -16,7 +16,7 @@ class Student
  end
 
  def self.find_student(name)
-   Student.all.find{ |e| e.name == name}
+   Student.all.find{ |e| e.first_name == name}
  end
 
 def grade_percentage

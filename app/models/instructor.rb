@@ -10,10 +10,6 @@ class Instructor
     @@all
   end
 
-  def instructor_test_names
-   BoatingTest.all.collect{ |e| e.test_name}
-  end
-
   def pass_student(student, test_name)
      BoatingTest.all.each do |test|
        if test.student == student && test.test_name == test_name
