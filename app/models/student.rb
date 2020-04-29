@@ -1,12 +1,14 @@
 class Student
-  attr_reader :name
+  @@all = []
+  attr_reader :first_name
 
-  def initialize(name)
-   @name = name
+  def initialize(first_name)
+   @first_name = name
+   Student.all << all
  end
 
  def self.all
-   BoatingTest.all.collect { |e| e.student}
+   @@all
  end
 
  def add_boating_test(test_name, status, instructor)
@@ -14,7 +16,7 @@ class Student
  end
 
  def self.find_student(name)
-   self.all.find{ |e| e.name == name}
+   Student.all.find{ |e| e.name == name}
  end
 
 def grade_percentage

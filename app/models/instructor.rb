@@ -1,11 +1,13 @@
 class Instructor
+  @@all = []
   attr_reader :name
   def initialize(name)
     @name = name
+    Instructor.all << self
   end
 
   def self.all
-    BoatingTest.all.collect{ |b| b.instructor}
+    @@all
   end
 
   def instructor_test_names
